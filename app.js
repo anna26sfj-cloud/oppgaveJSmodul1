@@ -31,6 +31,7 @@ Gjør beregningene ETTER at du legger til to år på alderen, og husk, hopp over
 
 ******************************************************************************/
 
+
 const cities = ["New York", "London", "Paris", "Berlin", "Copenhagen", "Rome"];
 
 const people = [
@@ -85,33 +86,27 @@ const people = [
 ];
 let combinedAge = 0;
 
-// Skriv koden for oppgave 1 her
 let count = 0;
 
 for (let i = 0; i < people.length; i++) {
 
   if (people[i].name === "Otto") {
-    continue; // hopper over Otto
+    continue;
   }
 
-  // Lager tilfeldig by
   let randomIndex = Math.floor(Math.random() * cities.length);
   people[i].city = cities[randomIndex];
 
-  // Setter tittel med vanlig if/else
   if (people[i].male === true) {
     people[i].title = "Mr.";
   } else {
     people[i].title = "Ms.";
   }
 
-  // Øker alder
   people[i].age = people[i].age + 2;
 
-  // Legger til hobby først
   people[i].hobbies.unshift("coding");
 
-  // Legger alder til total
   combinedAge = combinedAge + people[i].age;
 
   count = count + 1;
@@ -119,7 +114,8 @@ for (let i = 0; i < people.length; i++) {
 
 console.log(people);
 
-let averageAge = combinedAge / count;
+let averageAge = 0;
+averageAge = combinedAge / count;
 
 console.log("Combined age:", combinedAge);
 console.log("Average age:", averageAge);
